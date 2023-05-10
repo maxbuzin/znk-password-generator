@@ -52,7 +52,7 @@ export default function Home() {
 				<div className=''>
 					<h2 className='text-2xl font-semibold text-center uppercase'>Password Generator</h2>
 				</div>
-				<div className='flex items-center justify-between w-full max-w-xs px-8 pt-8'>
+				<div className='flex flex-col items-center justify-between w-full max-w-xs gap-2 px-8 pt-8 md:flex-row'>
 					<label className='text-zinc-100'>Password Length:</label>
 					<input
 						type='number'
@@ -121,7 +121,7 @@ export default function Home() {
 								type='text'
 								readOnly
 								value={generatedPassword}
-								className='w-full px-3 py-2 font-mono font-bold text-center text-gray-800 bg-gray-200 rounded'
+								className='w-full max-w-[90%] px-3 py-2 font-mono font-bold text-center text-gray-800 bg-gray-200 rounded'
 							/>
 							<button
 								onClick={handleCopy}
