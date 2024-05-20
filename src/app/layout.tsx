@@ -6,8 +6,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-	title: 'Password Generator',
-	description: 'A simple password generator, using React JS, Next JS, Typescript and Tawilwind CSS',
+	title: 'My Password Generator',
+	description: 'A simple password generator.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
