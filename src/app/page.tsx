@@ -40,15 +40,20 @@ export default function Home() {
 		setGeneratedPassword(password)
 	}
 
+	const [copySuccess, setCopySuccess] = useState('');
+
 	const handleCopy = () => {
-		copy(generatedPassword)
-	}
+	  copy(generatedPassword);
+	  setCopySuccess('Password copied!');
+	
+	  setTimeout(() => setCopySuccess(''), 2000);
+	};
 
 	return (
-		<main className='flex flex-col items-center justify-center w-full min-h-screen py-4 text-zinc-100 bg-zinc-800'>
+		<main className='flex flex-col items-center justify-between w-full min-h-screen py-4 text-zinc-100 bg-zinc-800'>
 			<div
 				id='content'
-				className='flex flex-col items-center justify-center flex-1 w-full max-w-md'>
+				className=' h-[600px] my-auto flex flex-col items-center w-full max-w-md'>
 				<div className=''>
 					<h2 className='text-2xl font-semibold text-center uppercase'>Password Generator</h2>
 				</div>
@@ -128,6 +133,11 @@ export default function Home() {
 								className='px-4 py-2 font-bold text-white duration-300 bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline'>
 								Copy
 							</button>
+							{copySuccess && (
+  <div className="mt-2 text-green-400 font-semibold animate-pulse">
+    {copySuccess}
+  </div>
+)}
 						</div>
 					</div>
 				)}
